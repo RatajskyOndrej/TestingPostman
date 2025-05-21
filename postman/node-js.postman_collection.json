@@ -1,0 +1,65 @@
+{
+	"info": {
+		"_postman_id": "cdaa81f8-da3d-44b7-9f8e-9cfe238bacfb",
+		"name": "node-js",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45149879",
+		"_collection_link": "https://universal-space-9697319.postman.co/workspace/Ond%25C5%2599ej-Ratajsk%25C3%25BD's-Workspace~55af09d6-0cbc-4486-8d6b-b0f98099258d/collection/45149879-cdaa81f8-da3d-44b7-9f8e-9cfe238bacfb?action=share&source=collection_link&creator=45149879"
+	},
+	"item": [
+		{
+			"name": "localhost/test",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response should be JSON\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"const jsonData = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Response has 'status' field\", function () {\r",
+							"    pm.expect(jsonData).to.have.property(\"status\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response has 'message' field\", function () {\r",
+							"    pm.expect(jsonData).to.have.property(\"message\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response has 'timestamp' field\", function () {\r",
+							"    pm.expect(jsonData).to.have.property(\"timestamp\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost/test",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"test"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
